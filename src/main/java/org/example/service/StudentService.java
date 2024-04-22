@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.exception.InformationExistException;
 import org.example.exception.InformationNotFoundException;
 import org.example.model.Student;
 import org.example.repository.StudentRepository;
@@ -51,6 +52,23 @@ public class StudentService {
             return studentOptional;
         } else {
             throw new InformationNotFoundException("student with student id " + studentId + " not found");
+        }
+    }
+
+
+    /**
+     * This is a POST request that checks to see if the student that the user is trying to create already exists before either throwing an InformationExistException, or saving the newly created student to the repository.
+     *
+     * @param studentObject represents the new student object the user is trying to create
+     * @return the newly created student
+     */
+    public Student createStudent(Student studentObject) {
+        Student student = studentRepository.findByFullName(studentObject.getFirstName(), studentObject.getLastName());
+
+        if (student != null) {
+            throw new InformationExistException("student with name " + studentObject.getFullName() + " already exists");
+        } else {
+            return studentRepository.save(student);
         }
     }
 
