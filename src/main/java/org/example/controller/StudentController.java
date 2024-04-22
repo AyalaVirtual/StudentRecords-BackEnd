@@ -5,10 +5,8 @@ import org.example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -62,6 +60,27 @@ public class StudentController {
         } else {
             message.put("message", "student with id " + studentId + " not found");
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+    /**
+     * This sets the path for POST requests for a new student and checks if the student exists or not before deciding whether to send an HTTP status message of CREATED or CONFLICT
+     *
+     * @param studentObject represents the new student the user is trying to create
+     * @return the HTTP status message
+     */
+    @PostMapping(path = "/students/")
+    public ResponseEntity<?> createStudent(@RequestBody Student studentObject) {
+        Student student = studentService.createStudent(studentObject);
+
+        if (student != null) {
+            message.put("message", "success");
+            message.put("data", student);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
+        } else {
+            message.put("message", "student not created");
+            return new ResponseEntity<>(message, HttpStatus.CONFLICT);
         }
     }
 
