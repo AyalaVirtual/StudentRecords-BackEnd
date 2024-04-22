@@ -21,7 +21,7 @@ public class StudentService {
     }
 
 
-    /**\
+    /**
      * This is a GET request that checks to see if the list of students is empty before either throwing an InformationNotFoundException, or returning the list of students.
      *
      * @return a list of all students
@@ -61,10 +61,10 @@ public class StudentService {
      * @return the newly created student
      */
     public Student createStudent(Student studentObject) {
-        Student student = studentRepository.findByFullName(studentObject.getFirstName(), studentObject.getLastName());
+        Student student = studentRepository.findByEmail(studentObject.getEmail());
 
         if (student != null) {
-            throw new InformationExistException("student with name " + studentObject.getFullName() + " already exists");
+            throw new InformationExistException("student with email address " + studentObject.getEmail() + " already exists");
         } else {
             return studentRepository.save(student);
         }
@@ -82,9 +82,9 @@ public class StudentService {
         Optional<Student> studentOptional = studentRepository.findById(studentId);
 
         if (studentOptional.isPresent()) {
-            studentOptional.get().setFirstName(studentObject.getFirstName());
-            studentOptional.get().setLastName(studentObject.getLastName());
-            studentOptional.get().setGrade(studentObject.getGrade());
+            studentOptional.get().setName(studentObject.getName());
+            studentOptional.get().setEmail(studentObject.getEmail());
+            studentOptional.get().setDateOfBirth(studentObject.getDateOfBirth());
             studentRepository.save(studentOptional.get());
             return studentOptional;
         } else {
