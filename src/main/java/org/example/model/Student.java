@@ -65,6 +65,12 @@ public class Student {
     }
 
 
+    public String getFullName() {
+        String fullName = firstName + " " + lastName;
+        return fullName;
+    }
+
+
     @Override
     public String toString() {
         return "Student{" +
