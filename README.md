@@ -1,6 +1,6 @@
 # Student Records API 
 
-This project aims to create a user-friendly and intuitive student API that interacts with the frontend to perform CRUD operations on student records. The API is designed to cater initially to administrators, providing appropriate functionality and views for this role. For the backend, I have developed an API that handles the CRUD (Create, Read, Update, Delete) operations for managing students. Each of the endpoints follows RESTful principles and accepts appropriate HTTP methods (POST, GET, PUT, DELETE). Responses are in JSON format to ensure compatibility and ease of integration with frontend applications. 
+This project aims to create a user-friendly and intuitive student API that interacts with the front end to perform CRUD operations on student records. The API is designed to cater initially to administrators, providing appropriate functionality and views for this role. For the backend, I have developed an API that handles the CRUD (Create, Read, Update, Delete) operations for managing students. Each of the endpoints follows RESTful principles and accepts appropriate HTTP methods (POST, GET, PUT, DELETE). Responses are in JSON format to ensure compatibility and ease of integration with frontend applications. 
 
 
 ## Technologies Used
