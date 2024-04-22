@@ -57,7 +57,7 @@ As an administrator, I want to be able to create a new student record so that I 
 
 <b>Acceptance Criteria:</b>
 <br>
-* The API endpoint /api/students should allow me to send a POST request with the necessary student details (first name, last name, grade). 
+* The API endpoint /api/students should allow me to send a POST request with the necessary student details (name, email, date of birth). 
 * Upon successful creation, the API should return the newly created student's information in JSON format.
 
 

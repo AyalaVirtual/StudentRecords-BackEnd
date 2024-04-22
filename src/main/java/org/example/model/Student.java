@@ -12,23 +12,23 @@ public class Student {
     private Long id;
 
     @Column
-    private String firstName;
+    private String name;
 
     @Column
-    private String lastName;
+    private String email;
 
     @Column
-    private int grade;
+    private String dateOfBirth;
 
 
     public Student() {
     }
 
-    public Student(Long id, String firstName, String lastName, int grade) {
+    public Student(Long id, String name, String email, String dateOfBirth) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.grade = grade;
+        this.name = name;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
     }
 
 
@@ -40,34 +40,28 @@ public class Student {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getGrade() {
-        return grade;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-
-    public String getFullName() {
-        String fullName = firstName + " " + lastName;
-        return fullName;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
 
@@ -75,9 +69,9 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", grade=" + grade +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 '}';
     }
 }
