@@ -73,6 +73,28 @@ public class StudentService {
     }
 
 
+    /**
+     * This is a PUT request that checks to see if a student exists before either throwing an InformationNotFoundException, or setting the attributes and saving the newly updated student to the repository
+     *
+     * @param studentId represents the id of the student the user is trying to update
+     * @param studentObject represents the updated version of the student
+     * @return the newly updated student
+     */
+    public Optional<Student> updateStudent(Long studentId, Student studentObject) {
+        Optional<Student> studentOptional = studentRepository.findById(studentId);
+
+        if (studentOptional.isPresent()) {
+            studentOptional.get().setFirstName(studentObject.getFirstName());
+            studentOptional.get().setLastName(studentObject.getLastName());
+            studentOptional.get().setGrade(studentObject.getGrade());
+            studentRepository.save(studentOptional.get());
+            return studentOptional;
+        } else {
+            throw new InformationNotFoundException("student with id " + studentId + " not found");
+        }
+    }
+
+
 
 
 }
