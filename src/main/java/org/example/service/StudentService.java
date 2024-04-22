@@ -95,6 +95,21 @@ public class StudentService {
     }
 
 
+    /**
+     * This is a DELETE request that checks to see if an individual student exists before either deleting it, or throwing an InformationNotFoundException
+     *
+     * @param studentId represents the id of the student the user is trying to delete
+     * @return the deleted student
+     */
+    public Optional<Student> deleteStudent(Long studentId) {
+        Optional<Student> studentOptional = studentRepository.findById(studentId);
 
+        if (studentOptional.isPresent()) {
+            studentRepository.deleteById(studentId);
+            return studentOptional;
+        } else {
+            throw new InformationNotFoundException("student with id " + studentId + " not found");
+        }
+    }
 
 }
