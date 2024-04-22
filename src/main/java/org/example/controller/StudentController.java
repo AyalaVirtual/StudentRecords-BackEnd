@@ -108,6 +108,24 @@ public class StudentController {
     }
 
 
+    /**
+     * This sets the path for DELETE requests for an existing student and checks if the student exists or not before deciding whether to send an HTTP status message of OK or NOT FOUND
+     *
+     * @param studentId represents the id of the student the user is trying to delete
+     * @return the HTTP status message
+     */
+    @DeleteMapping(path = "/students/{studentId}/")
+    public ResponseEntity<?> deleteStudent(@PathVariable(value = "studentId") Long studentId) {
+        Optional<Student> studentOptional = studentService.deleteStudent(studentId);
 
+        if (studentOptional.isPresent()) {
+            message.put("message", "success");
+            message.put("data", studentOptional.get());
+            return new ResponseEntity<>(message, HttpStatus.OK);
+        } else {
+            message.put("message", "student with id " + studentId + " not found");
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+    }
 
 }
