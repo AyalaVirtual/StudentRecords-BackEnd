@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.exception.InformationNotFoundException;
 import org.example.model.Student;
 import org.example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,28 @@ public class StudentController {
         } else {
             message.put("message", "student not created");
             return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+        }
+    }
+
+
+    /**
+     * This sets the path for PUT requests for an existing student and checks if the student exists or not before deciding whether to send an HTTP status message of OK or NOT FOUND
+     *
+     * @param studentId represents the id of the student the user is trying to update
+     * @param studentObject represents the updated version of the student
+     * @return the HTTP status message
+     */
+    @PutMapping(path = "/students/{studentId}/")
+    public ResponseEntity<?> updateStudent(@PathVariable(value = "studentId") Long studentId, @RequestBody Student studentObject) throws InformationNotFoundException {
+        Optional<Student> studentOptional = studentService.updateStudent(studentId, studentObject);
+
+        if (studentOptional.isPresent()) {
+            message.put("message", "success");
+            message.put("data", studentOptional.get());
+            return new ResponseEntity<>(message, HttpStatus.OK);
+        } else {
+            message.put("message", "student with id " + studentId + " not found");
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
         }
     }
 
