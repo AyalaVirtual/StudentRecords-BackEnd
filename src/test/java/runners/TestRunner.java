@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "definitions",
-        plugin = {"pretty"},
+         glue = "definitions",
+         plugin = {"pretty"},
         dryRun = true // This means when we run our test, Cucumber is going to check all the steps inside the features file and check that we have them written inside the TestDefinitions.java
 )
 public class TestRunner {
