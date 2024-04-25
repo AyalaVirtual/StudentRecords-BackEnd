@@ -1,9 +1,9 @@
-package org.example.service;
+package org.example.studentrecordsapi.service.service;
 
-import org.example.exception.InformationExistException;
-import org.example.exception.InformationNotFoundException;
-import org.example.model.Student;
-import org.example.repository.StudentRepository;
+import org.example.studentrecordsapi.exception.exception.InformationExistException;
+import org.example.studentrecordsapi.exception.exception.InformationNotFoundException;
+import org.example.studentrecordsapi.model.model.Student;
+import org.example.studentrecordsapi.repository.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

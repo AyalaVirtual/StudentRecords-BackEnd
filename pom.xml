@@ -60,6 +60,17 @@
         </dependency>
 
 
+        <!-- added for mockMVC testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
@@ -74,6 +85,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.10.1</version>
+            <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
@@ -89,6 +101,7 @@
             <version>7.10.1</version>
             <scope>test</scope>
         </dependency>
+
 
         <!-- This dependency is supposed to solve conflicting versions error -->
         <dependency>
@@ -114,6 +127,7 @@
             <scope>test</scope>
         </dependency>
 
+
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-spring -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -122,6 +136,7 @@
         </dependency>
 
     </dependencies>
+
 
     <build>
         <plugins>

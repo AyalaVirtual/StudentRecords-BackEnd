@@ -1,13 +1,14 @@
-package org.example.controller;
+package org.example.studentrecordsapi.controller;
 
-import org.example.exception.InformationNotFoundException;
-import org.example.model.Student;
-import org.example.service.StudentService;
+import org.example.studentrecordsapi.exception.exception.InformationNotFoundException;
+import org.example.studentrecordsapi.model.model.Student;
+import org.example.studentrecordsapi.service.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Optional;
 
 
@@ -15,6 +16,9 @@ import java.util.Optional;
 @RequestMapping("/api/") // http://localhost:9092/api/
 public class StudentController {
     private StudentService studentService;
+
+    static HashMap<String, Object> result = new HashMap<>();
+    static HashMap<String, Object> message = new HashMap<>();
 
 
     @Autowired

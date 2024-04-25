@@ -7,6 +7,6 @@ Feature: Rest API functionalities
     When I get a specific student
     Then The specific student is available
     When I edit a student from my list
-    Then the student content is edited
+    Then The student content is edited
     When I remove a student from my list
     Then The student is removed

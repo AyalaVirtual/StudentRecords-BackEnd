@@ -1,6 +1,6 @@
-package org.example.repository;
+package org.example.studentrecordsapi.repository.repository;
 
-import org.example.model.Student;
+import org.example.studentrecordsapi.model.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;

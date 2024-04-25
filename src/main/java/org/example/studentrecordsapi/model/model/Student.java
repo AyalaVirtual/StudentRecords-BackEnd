@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.studentrecordsapi.model.model;
 
 import javax.persistence.*;
 

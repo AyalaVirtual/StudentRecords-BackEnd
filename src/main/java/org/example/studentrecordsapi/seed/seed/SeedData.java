@@ -1,10 +1,10 @@
-package org.example.seed;
+package org.example.studentrecordsapi.seed.seed;
 
-import org.example.repository.StudentRepository;
+import org.example.studentrecordsapi.repository.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.example.model.Student;
+import org.example.studentrecordsapi.model.model.Student;
 
 
 @Component
