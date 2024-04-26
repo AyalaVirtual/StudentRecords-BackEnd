@@ -107,7 +107,7 @@ As an administrator, I want to delete a student record so that I can remove stud
 * HTTP requests/endpoints spreadsheet - https://docs.google.com/spreadsheets/d/18kHZpWV__r9cRTKkT8xmkjtEG8_sPdnL_pWVzjmNHp8/edit?usp=sharing 
 
 
-### Author
+### Authors
 
 :woman_technologist: Erica Ayala
 
@@ -115,5 +115,9 @@ As an administrator, I want to delete a student record so that I can remove stud
 
 * [GitHub](https://www.github.com/AyalaVirtual) 
 
+:man_technologist: Steven Rescigno
 
+* [LinkedIn](https://www.linkedin.com/in/steven-rescigno-204a8187)
+
+* [GitHub](https://www.github.com/stevenanthonyrevo)
 
