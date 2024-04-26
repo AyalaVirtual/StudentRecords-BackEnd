@@ -22,6 +22,13 @@ This project aims to create a user-friendly and intuitive student API that inter
 3. Build and run the project.
 4. Use your preferred API testing tool (e.g., Postman) to interact with the endpoints. 
 
+### Build with Docker
+
+```
+ docker build -t studentrecords-backend .
+ docker run -d -p 9092:9092 studentrecords-backend:latest
+ curl http://localhost:9092/api/
+```
 
 ## Entity Relationship Diagram
 
@@ -98,7 +105,6 @@ As an administrator, I want to delete a student record so that I can remove stud
 * User Stories - https://docs.google.com/document/d/14Uo-IgHvJab1L4-r9mHf7T20wOMQ834O4_MWG7Bykiw/edit?usp=sharing 
 
 * HTTP requests/endpoints spreadsheet - https://docs.google.com/spreadsheets/d/18kHZpWV__r9cRTKkT8xmkjtEG8_sPdnL_pWVzjmNHp8/edit?usp=sharing 
-
 
 
 ### Author
